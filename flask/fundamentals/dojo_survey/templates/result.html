@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dojo survey INDEX</title>
+    <title>Submitted Info</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
-    <h1>Submitted Info</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Dojo Location</th>
-                <th>Your Favorite Language</th>
-                <th>Comment</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> AQUI VA LO QUE PUSIERON </td>
-            </tr>
-        </tbody>
-    </table>
+    <h1 class="text-center">Submitted Info</h1>
+    <div class="container center-div2">
+        <div class="bordered-div">
+            <table>
+                <thead class="table table-auto">
+                    <tr>
+                        <th>Name</th>
+                        <th>Dojo Location</th>
+                        <th>Your Favorite Language</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody class="table table-auto">
+                    <tr>
+                        <td>{{ session['username'] }}</td>
+                        <td>{{ session['userlocation'] }}</td>
+                        <td>{{ session['userlanguage'] }}</td>
+                        <td>{{ session['usercomment'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

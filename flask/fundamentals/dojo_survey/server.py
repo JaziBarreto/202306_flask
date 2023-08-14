@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 app = Flask (__name__)
+app.secret_key = 'keep it secret, keep it safe' 
 
 @app.route('/')
 def index():
@@ -7,15 +8,15 @@ def index():
 
 @app.route('/users', methods=['POST'])
 def create_user():
-    print("Got Post Info")
-    session['username'] = request.form['name'] #con estas dos prop ya tenemos acceso a esos datos de post
-    session['useremail'] = request.form['email']
-    return redirect('/show') #FUNDAMENTAL DIRECCIONAR A LA PAGINA DE ORIGEN
+    session['username'] = request.form['name']
+    session['userlocation'] = request.form['location']
+    session['userlanguage'] = request.form['language']
+    session['usercomment'] = request.form['comment']
+    return redirect('/result')
 
-@app.route('/show')
+@app.route('/result')
 def show_user():
-    return render_template('show.html')
-
+    return render_template('result.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

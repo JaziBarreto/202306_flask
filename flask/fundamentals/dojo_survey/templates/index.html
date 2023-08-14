@@ -5,39 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojo survey INDEX</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
-    <h1>Dojo Survey</h1>
-    <h3>Your information</h3>
-    <div class="container">
-        <form action="/users" method="post">
-            <label for="name">Your Name: </label>
-            <input type="text" name="name">
+</head>
+<body>
+    <h1 class="text-center">Dojo Survey</h1>
+    <h3 class="text-center">Your information</h3>
+    <div class="container center-div1">
+        <div class="bordered-div">
+            <form action="/users" method="post" class="w-100">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name:</label>
+                    <input type="text" name="name" class="form-control">
+                </div>
 
-            <label for="location">Dojo Location: </label>
-            <select name="location">
-                <option>San Jose</option>
-                <option>Encarnacion</option>
-                <option>North Lake Tahoe</option>
-                <option>Narnia</option>
-            </select>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Dojo Location:</label>
+                    <select name="location" class="form-select">
+                        <option>Select your option</option>
+                        <option>San Jose</option>
+                        <option>Encarnacion</option>
+                        <option>North Lake Tahoe</option>
+                        <option>Narnia</option>
+                    </select>
+                </div>
 
-            <label for="language">Favorite Language:  </label>
-            <select name="language">
-                <option>Python</option>
-                <option>JavaScript</option>
-                <option>Java</option>
-                <option>C++</option>
-            </select>
+                <div class="mb-3">
+                    <label for="language" class="form-label">Favorite Language:</label>
+                    <select name="language" class="form-select">
+                        <option>Select your favorite language</option>
+                        <option>Python</option>
+                        <option>JavaScript</option>
+                        <option>Java</option>
+                        <option>C++</option>
+                    </select>
+                </div>
 
-            <div>
-                <label for="comment">Comment(optional): </label>
-                <textarea name="comment" cols="20" rows="3"></textarea>
-            </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment (optional):</label>
+                    <textarea name="comment" class="form-control" cols="20" rows="3"></textarea>
+                </div>
 
-            <input type="submit" value="Button Text" >
-        </form>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
-
 </body>
 </html>
+

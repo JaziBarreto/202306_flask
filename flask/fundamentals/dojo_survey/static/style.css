@@ -1,0 +1,55 @@
+h1 {
+    background: linear-gradient(to right, #92044b, #E19898, #FE7BE5 );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    background: linear-gradient(to right, #92044b, hsl(0, 55%, 74%), #FE7BE5 );
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.bordered-div {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.btn-primary {
+    background-color: #dc09f0;
+    border-color: #300126;
+    margin-bottom: 20px;
+}
+.btn-primary:hover {
+    background-color: #e198d1;
+    border-color: #dc09f0;
+}
+
+.center-div1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.center-div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 74vh;
+}
+
+
+th, td {
+    padding: 8px;
+    text-align: left; 
+}
