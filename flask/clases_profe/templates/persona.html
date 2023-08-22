@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Pantalla de Persona {% endblock %} 
+
+{% block contenido %}
+<h1 class="rojo">Persona {{nombre}}</h1>
+{% endblock %}
+
+
+{% block scripts %}
+toastr.info("Hola esto es un mensaje desde PERSONA","Mensaje de PERSONA")
+{% endblock %}

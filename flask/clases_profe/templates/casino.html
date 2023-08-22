@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Casino {% endblock %}
+
+{% block estilos %}
+<style>
+.border {
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>
+{% endblock %}
+
+{% block contenido %}
+<h1>Juego del Casino</h1>
+<div class="row">
+    <div class="col-2">
+        <label>ORO: </label>
+    </div>
+    <div class="col-2">
+        <input class="form-control" id="oro" value="{{session.oro}}">
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <form class="border mt-4" action="/process_money"  method="post">
+            <h2>FARM</h2>
+            <p>Ganarás de 5 a 10</p>
+            <input type="hidden" name="opcion" value="farm"> 
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    <div class="col-3">
+        <form class="border mt-4" action="/process_money"  method="post">
+            <h2>CAVE</h2>
+            <p>Ganarás de 5 a 10</p>
+            <input type="hidden" name="opcion" value="cave"> 
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    <div class="col-3">
+        <form class="border mt-4" action="/process_money"  method="post">
+            <h2>HOUSE</h2>
+            <p>Ganarás de 5 a 10</p>
+            <input type="hidden" name="opcion" value="house"> 
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    <div class="col-3">
+        <form class="border mt-4" action="/process_money" method="post">
+            <h2>CASINO</h2>
+            <p>Ganarás de 5 a 10</p>
+            <input type="hidden" name="opcion" value="casino" > 
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
+
+{% for mensaje in session.lista %}
+<p>{{mensaje}}</p>
+{% endfor %}
+
+
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}

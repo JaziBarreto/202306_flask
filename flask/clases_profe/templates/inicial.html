@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    {% include 'menu.html' %}
+{% endblock %}
+
+{% block titulo %} Esto es un HTML {% endblock %} 
+
+{% block contenido %}
+<h1 class="rojo">Esto es desde un html inicial</h1>
+<p>Esto es un parrafo!!</p>
+<h3>{{usuario}}</h3>
+<h3>{{nombre}}</h3>
+
+<hr>
+<ul>
+    <li>ID: {{usuario_dict.usuario}}</li>
+    <li>Nombre: {{usuario_dict.nombre}}</li>
+    <li>Edad: {{usuario_dict.edad}}</li>
+</ul>
+
+<hr>
+<h1>Iterando con un for los pasatiempos!</h1>
+<div class="cointainer">
+    {% for pasatiempo in usuario_dict.pasatiempos %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title {% if pasatiempo.nombre == 'musica' %} rojo {% endif %}">{{pasatiempo.nombre}}</h5>
+            <p class="card-text">En este pasatiempo el usuario se dedica aproximadamente {{pasatiempo.tiempo}}
+                horas en esto.</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if usuario_dict.edad > 30 %}
+    <h1>ES UN MAYOR DE EDAD</h1>
+{% endif %}
+
+{% if usuario_dict.edad > 70 %}
+<h1>ES UN ABUELO!</h1>
+{% endif %}
+
+{% endblock %}

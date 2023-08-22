@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% include 'menu.html' %}
+{% endblock %}
+
+{% block titulo %} Formulario HTML {% endblock %}
+
+
+{% block contenido %}
+<div class="row">
+    <div class="col">
+        <h1 id="activar">Formulario HTML</h1>
+        <form action='/proceso_formulario' method='post'>
+            <input type="hidden" id="oculto" name="tipo" value="casa">
+
+            <div class="row g-3 align-items-center">
+                <div class="col-3">
+                    <label for="name" class="col-form-label">Nombre</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="name" name="nombre" class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mt-1">
+                <div class="col-3">
+                    <label for="email" class="col-form-label">Email</label>
+                </div>
+                <div class="col-9">
+                    <input type="email" id="email" name='email' class="form-control">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-3">
+                </div>
+                <div class="col-9">
+                    <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                    <a href="/limpiar" class="btn btn-danger mt-3 ms-2">Limpiar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col">
+        <h1>DATOS RECIBIDOS!</h1>
+        
+        {% if nombre%}
+        <p>Este es el nombre: {{nombre}}</p>
+        {%else%}
+        <p>Lamentablemente aún no ejecutas el formulario.</p>
+        {%endif%}
+
+        {% if email%}
+        <p>Este es el email: {{email}}</p>
+        {%endif%}
+
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+    $("#activar").click(function(){
+        $("#oculto").val("EDIFICIO");
+    });
+</script>
+
+{% endblock %}
