@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo survey INDEX</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Dojo Survey</h1>
+    <h3>Your information</h3>
+    <div class="container">
+        <form action="/users" method="post">
+            <label for="name">Your Name: </label>
+            <input type="text" name="name">
+
+            <label for="location">Dojo Location: </label>
+            <select name="location">
+                <option>San Jose</option>
+                <option>Encarnacion</option>
+                <option>North Lake Tahoe</option>
+                <option>Narnia</option>
+            </select>
+
+            <label for="language">Favorite Language:  </label>
+            <select name="language">
+                <option>Python</option>
+                <option>JavaScript</option>
+                <option>Java</option>
+                <option>C++</option>
+            </select>
+
+            <div>
+                <label for="comment">Comment(optional): </label>
+                <textarea name="comment" cols="20" rows="3"></textarea>
+            </div>
+
+            <input type="submit" value="Button Text" >
+        </form>
+    </div>
+
+</body>
+</html>
