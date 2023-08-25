@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, session, flash
-from hola_flask.config.mysqlconnections import connectToMySQL
+from flask_app.config.mysqlconnections import connectToMySQL
 app = Flask(__name__)
 app.secret_key = 'cualquier cosa'
 
