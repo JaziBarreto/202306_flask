@@ -29,13 +29,18 @@
                 <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
                 <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
                 <p class="card-text"><strong>Created at: </strong> {{ user.created_at }}</p>
+                <p class="card-text">
+                    <a href="/users/edit_user/{{ user.id }}" class="btn btn-warning btn-sm add-user-button">Edit</a>
+                    <a href="/users/{{ user.id }}" class="btn btn-success btn-sm add-user-button">Show</a>
+                    <a href="/users/delete_user/{{ user.id }}" class="btn btn-danger btn-sm add-user-button">Delete</a>
+                </p>
             </div>
         </div>
         {% endfor %}
     </div>
     <div class="row">
         <div class="col-md-4">
-            <a href="/" class="btn btn-info btn-sm add-user-button">Add user</a>
+            <a href="/" class="btn btn-info btn-sm add-user-button">Add a new user</a>
         </div>
     </div>
 </div>

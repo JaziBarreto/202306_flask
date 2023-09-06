@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% endblock %}
+
+{% block estilos %}
+<style>
+    .user-form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .user-form {
+        max-width: 400px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block contenido %}
+<div class="user-form-container">
+    <div class="row">
+        <div class="col-6">
+            <!-- Formulario para "Sign Up" -->
+            <div class="card bg-dark text-white mb-4" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                    <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
+                    <p class="text-white-50 mb-5">Please enter your registration details!</p>
+                    <form action="/procesar_registro" method="post" class="user-form">
+                        <div class="form-outline form-white mb-4">
+                            <input type="text" name="first_name" class="form-control form-control-lg" required>
+                            <label class="form-label" for="typeFirstNameX">First Name</label>
+                        </div>
+                        <div class="form-outline form-white mb-4">
+                            <input type="text" name="last_name" class="form-control form-control-lg" required>
+                            <label class="form-label" for="typeLastNameX">Last Name</label>
+                        </div>
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" name="email" class="form-control form-control-lg" required>
+                            <label class="form-label" for="typeEmailX">Email</label>
+                        </div>
+                        <div class="form-outline form-white mb-4">
+                            <input type="password" name="password" class="form-control form-control-lg" required>
+                            <label class="form-label" for="typePasswordX">Password</label>
+                        </div>
+                        <div class="form-outline form-white mb-4">
+                            <input type="password" name="confirm_password" class="form-control form-control-lg" required>
+                            <label class="form-label" for="typeConfirmPasswordX">Confirm Password</label>
+                        </div>
+                        <button class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <!-- Formulario para "Login" -->
+            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                    <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                    <p class="text-white-50 mb-5">Please enter your login details!</p>
+                    <form action="/procesar_login" method="post" class="user-form">
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" name="login_email" class="form-control form-control-lg" required>
+                            <label class="form-label" for="typeLoginEmailX">Email</label>
+                        </div>
+                        <div class="form-outline form-white mb-4">
+                            <input type="password" name="login_password" class="form-control form-control-lg" required>
+                            <label class="form-label" for="typeLoginPasswordX">Password</label>
+                        </div>
+                        <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
